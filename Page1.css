@@ -1,0 +1,18 @@
+div{
+    background: red;
+    margin: 2px;
+    padding: 3px;
+    color: chartreuse
+}
+
+#quete{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blueviolet;
+}
+
+#ul2{
+    font-size: larger;
+    color:coral;
+    font-family: sans-serif;
+}

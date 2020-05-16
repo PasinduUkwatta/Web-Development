@@ -1,0 +1,49 @@
+p{
+    background-color: yellow;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#i1{
+    font-style: normal;
+}
+
+#i2{
+    font-style: italic;
+}
+
+
+#i3{
+    font-style: oblique;
+}
+
+#i4{
+    font-weight: bold;
+}
+
+#i5{
+    font-size: x-large;
+}
+
+#i6{
+    font-weight: lighter;
+}
+
+#i7{
+    color: blue;
+}
+
+#i8{
+    color: darkgreen;
+}
+
+#i9{
+    background-color:pink;
+}
+
+#i10{
+   
+    border: 3px aqua;
+  
+   
+}
