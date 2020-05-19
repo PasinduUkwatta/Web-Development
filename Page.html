@@ -1,0 +1,51 @@
+<html>
+    <link rel="stylesheet" href="Page.css">
+    <head>
+        <title>Jquery Page</title>
+        <h1>JQUERY PAGE</h1>
+    </head>
+    
+    <body>
+        <p>javascript programming with jqueyry</p>
+
+        <ul>
+            <li>java <a href="google.com">google</a></li>
+            <li>python</li>
+            <li>c</li>
+            <li>javascript</li>
+        </ul>       
+    </body>
+    
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.js" 
+                integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+                crossorigin="anonymous">   
+        </script>
+
+        
+    <script type="text/javascript">
+    $("ul").before("<h2>programming lnguages </h2>");
+   
+   
+    $("ul").after("<h2>unordered list of programming languages </h2>");
+
+
+    //this is a alrt box
+    alert($("li :first").text());
+
+    //we create a object with  defined set os rules 
+    let design={
+        color :"blue",
+        background:"black",
+        border :"3px solid red"
+    }
+
+    //we are calling the selected items
+    $("h1").css(design);
+
+
+
+
+   
+    </script>
+</html>
