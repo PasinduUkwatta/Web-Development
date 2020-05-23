@@ -1,3 +1,6 @@
-<h1>Data Binding</h1>
 
+//in this the string interpolation is using
+<h1>Server name {{ServerName}} with pid {{ServerId}} is {{toggleServerStatues()}}</h1>
 
+//this is a property binding
+<button [disabled]="buttonState" (click)="toggleServerStatues()">Toggle Statues </button>
