@@ -1,7 +1,7 @@
-
-<!--in this the string interpolation is using-->
-<h1>Server name {{ServerName}} with pid {{ServerId}} is {{toggleServerStatues()}}</h1>
-
-<!--this is a property binding-->
-
+<h2>Input Server Information</h2>
+<input type ="text" placeholder="Server Name" [(ngModel)]="ServerName">
+<h3>Dispaly server Information</h3>
+<p>{{ServerName}}</p>
+<p>{{ServerId}}</p>
+<p>{{ServerStatues}}</p>
 <button [disabled]="buttonState" (click)="toggleServerStatues()">Toggle Statues </button>
