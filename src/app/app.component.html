@@ -1,1 +1,9 @@
+<h2>this is a example of ngif</h2>
 
+<p *ngIf="flag;else elseblock">Flag is true </p>
+<ng-template #elseblock>
+  <p>Flag is False</p>
+
+</ng-template>
+
+<button (click)="toggleFlag()">Toggle BUTTON</button>

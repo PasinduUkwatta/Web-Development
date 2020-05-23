@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  flag = true;
+  toggleFlag(){
+    this.flag =!this.flag;
+    return this.flag;
+  }
 }
