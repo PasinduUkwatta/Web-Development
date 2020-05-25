@@ -1,5 +1,6 @@
-<h2>this is a example of ngif</h2>
+<h2 [ngStyle]="{color :getColor()}">this is a example of ngif</h2>
 
+<h3 [ngClass]="{'white':getColor()}">This is a example of ng class</h3>
 <p *ngIf="flag;else elseblock">Flag is true </p>
 <ng-template #elseblock>
   <p>Flag is False</p>
@@ -7,3 +8,10 @@
 </ng-template>
 
 <button (click)="toggleFlag()">Toggle BUTTON</button>
+
+<h1>Student Roster</h1>
+
+<input type="text" placeholder="name" [ngModel]="currentName">
+<button (click)="add()">SUBMIT NAME </button>
+
+<li *ngFor="let names of studentRoaster">{{names}}</li>

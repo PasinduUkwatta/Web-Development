@@ -8,3 +8,8 @@ p{
   bottom: 2px solid black;
 }
 
+.white{
+  border :1px solid red;
+  background-color: black;
+  color: chartreuse;
+}
