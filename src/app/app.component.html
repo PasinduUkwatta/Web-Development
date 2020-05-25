@@ -1,1 +1,8 @@
 
+<h1>Assignment 3</h1>
+
+<p *ngIf="state===true">This is the checked paragraph</p>
+
+<button (click)="toggleDisplay()">Toggle Display</button>
+
+<p *ngFor="let clicks of counter" [ngStyle]="{color:getLenght()}">{{clicks}}</p>
