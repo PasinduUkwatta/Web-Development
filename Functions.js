@@ -1,25 +1,27 @@
-function hello(){
-    console.log("welcome to the javascript coding");
-    console.log("function called from the function ");
+//this is a example for creating functions in node js
+
+function hello(name){
+    return "hello "+name;
 }
 
-hello();
+function add(a,b){
+    return "answer is "+(a+b);
+}
 
-//we doesnt need to declare the variable type
-//automatically declare the variable type
+function mul(a,b){
+    return "answer is"+(a*b);
+}
 
-function Calculator(a,b){
 
-    var add = a+b;
-    var sub = a-b;
-    var mul = a*b;
-    var div = a/b;
- 
-    console.log("addition is :"+add);
-    console.log("substraction is :"+sub);
-    console.log("multiplication is :"+mul);
-    console.log("division is :"+div);
+//this is the anonymuoes functions
+//this function does not have any name
+//it initalize to the variable
 
-};
+var sub =function(a,b){
+    return "answer is"+(a-b);
+}
 
-Calculator(20,10);
+console.log(hello("pasindu"));
+console.log(add(10,20));
+console.log(mul(5,6));
+console.log(sub(10,6));
