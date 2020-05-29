@@ -1,0 +1,39 @@
+<html>
+    
+<!-- 
+    in this practicle we need to provide the jQuery ui fies externally
+    after install we need to provide the j query ui js file after main jqyery file
+    then we need to import the css files of the j query ui 
+
+ -->
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.theme.css">
+    <head>
+        <title>Drag and Drop</title>
+        <h1>DRAG & DROP</h1>
+    </head>
+
+    <body>
+        <img id="dog" src="d.jpg" alt="" height="100" width="100">
+        <img id="house" src="Dog+House.jpg" alt=""  style="float: right;"  height="200" width="200">
+    </body>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" 
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+crossorigin="anonymous">   
+</script>
+
+
+<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" >
+$(function(){
+    $("#dog").draggable();
+    $("#house").droppable();
+})
+
+</script>
+
+
+</html>

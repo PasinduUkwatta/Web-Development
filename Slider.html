@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Slider</title>
+        <h1>SLIDER</h1>
+    </head>
+
+    <body>
+        <button id="btn1">Slide up</button><br><br>
+        <button id="btn2">Slide down</button><br><br>
+        <button id="btn3">Slide Toggle</button><br><br>
+        <img id="img" src="9108453_R_Z001A_UC1503377.jpg" alt="">
+    </body>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" 
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+crossorigin="anonymous">   
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#btn1").click(function(){
+        console.log("image slide up")
+        $("#img").slideUp(2000);
+    })
+
+
+    $("#btn2").click(function(){
+        console.log("image slide down")
+        $("#img").slideDown(2000);
+    })
+
+    $("#btn3").click(function(){
+        console.log("image slide toggle")
+        $("#img").slideToggle(2000);
+    })
+})
+</script>
+
+</html>

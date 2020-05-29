@@ -1,0 +1,30 @@
+#div1{
+    background-color: aqua;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#centered{
+    background:chartreuse ;
+    width: 50%;
+    margin: auto;
+
+}
+
+#topleft{
+    background-color: darkslategray;
+border: 1px solid darkgreen;
+width: 200px;
+}
+
+#bottomright{
+    background-color: crimson;
+    position: absolute;
+    z-index: 5;
+}
+/*from this the sentnce cannot change the positon in the page*/
+#fixed{
+    position: fixed;
+    background-color: cyan;
+}
+
