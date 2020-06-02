@@ -1,0 +1,9 @@
+https://www.youtube.com/watch?v=o2bmbfOdttE
+
+npm install -g create-react-app
+
+npx create-react-app (filename) //todo-app
+
+cd todo-app
+
+npm start
