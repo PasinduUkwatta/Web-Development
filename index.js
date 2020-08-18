@@ -1,31 +1,26 @@
+import {combineReducers} from 'redux';
 
+const songsReducer =()=>{
+   return [
 
+       {title: 'No Scrubs', duration: '4:05'},
+       {title: 'Marcrena', duration: '3:45'},
+       {title: 'All Star', duration: '3:27'},
+       {title: 'I Want In that Way', duration: '5:16'}
 
-//Import the React and ReactDOM libraries
-import React from "react";
-import ReactDOM from "react-dom"
+   ]
+}
 
+const selectedSongReducer=(selectedSong=null,action)=>{
+    if (action.type==="SONG_SELECTED"){
+        return action.payload
+    }
 
-//Craete a react Component
+    return selectedSong
 
+}
 
-
-
-
-const App = function () {
-    return (<div>Hi! There</div>)
-};
-
-
-//Take the react Component and show it on the screeen
-
-ReactDOM.render(
-    <App/>,
-    document.querySelector('#root')
-)
-
-
-
-
-
-
+export default combineReducers({
+    songs: songsReducer,
+    selectedSong: selectedSongReducer
+})
