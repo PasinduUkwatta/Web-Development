@@ -1,4 +1,5 @@
-import React from 'react'
+ import React from 'react'
+ import axios from "axios";
 
 class DataTable extends React.Component{
 
@@ -6,7 +7,9 @@ class DataTable extends React.Component{
         super (props)
 
         this.state ={
-            paymentDetails:''
+            paymentDetails:'',
+            userPaymentDetails:''
+
 
         }
 
@@ -27,6 +30,38 @@ class DataTable extends React.Component{
 
     componentDidMount() {
         let auth = localStorage.getItem('accessTokenLogin');
+        console.log(auth)
+
+        console.log(typeof(auth))
+        axios.post('protected',null,{
+            headers:{
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+                'Authorization': "Bearer" + " " + auth,
+            }
+        })
+            .then(responce=>{
+                console.log(responce)
+
+                var user_email =(responce.data.user_email).toString()
+                var data =user_email
+                console.log(user_email)
+                console.log(typeof (user_email))
+                axios.post('user-payment-details',{
+                    email: user_email,
+
+                })
+                    .then(responce=>{
+                        console.log(responce)
+                        this.setState({userPaymentDetails:responce.data.result})
+                        console.log(this.state.userPaymentDetails)
+
+
+
+                    })
+
+            })
+
 
 
 
@@ -53,6 +88,8 @@ class DataTable extends React.Component{
             console.log(userPaymentDetails)
 
 
+
+
         }
 
 
@@ -77,6 +114,8 @@ class DataTable extends React.Component{
 
 
             let Payments = JSON.parse(localStorage.getItem('paymentDetails'));
+            console.log(Payments)
+            console.log(typeof (Payments))
             var resultArray = Object.keys(Payments).map((key) => [Number(key), Payments[key]])
 
             //var stringResult =JSON.stringify(Payments)
@@ -94,16 +133,17 @@ class DataTable extends React.Component{
 
                             <div>
 
-                                <div>
+                                <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
 
-                                    <div>
+                                    <div className="ui segment"
+                                         style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                                         <table className="ui celled selectable table">
                                             <thead>
                                             <tr>
                                                 <th className="center  aligned"> Payment ID</th>
                                                 <th className="center  aligned">Payment Type</th>
                                                 <th className="center  aligned">Amount</th>
-                                                <th className="center  aligned">    User Email</th>
+                                                <th className="center  aligned">User Email</th>
                                                 <th className="center  aligned">User Name</th>
                                             </tr>
                                             </thead>
@@ -166,7 +206,11 @@ class DataTable extends React.Component{
                                             </tbody>
                                         </table>
 
+
+
+
                                         <div>
+
 
                                         </div>
 
@@ -176,7 +220,18 @@ class DataTable extends React.Component{
                                 </div>
                                 <br/>
 
-                            </div>)
+
+                            </div>
+
+
+
+
+
+
+
+
+
+                        )
 
                     }
                 }
