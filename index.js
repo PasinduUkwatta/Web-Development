@@ -1,14 +1,6 @@
-import {SIGN_IN,SIGN_OUT} from "./types";
+import {combineReducers} from 'redux'
+import authReducer from "./authReducer";
 
-export const signIn =(userId) =>{
-    return{
-        type:SIGN_IN,
-        payload :userId
-    }
-}
-
-export const signOut =() =>{
-    return{
-        type:SIGN_OUT
-    }
-}
+export default combineReducers({
+   auth :authReducer
+})
