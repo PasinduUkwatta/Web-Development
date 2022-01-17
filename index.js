@@ -1,17 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import {createStore} from "redux";
+import {configureStore, createSlice} from "@reduxjs/toolkit";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const initialCounterState ={counter :0,showCounter :true}
+const counterSlice=createSlice({
+    name :"counter",
+    initialCounterState,
+    reducers:{
+        increment(state){return  state.counter++   },
+        decrement(state){state.counter--},
+        toggle(state){state.showCounter=!state.showCounter},
+        increase(state,action){state.counter=state.counter+action.payload},
+
+    }
+})
+
+const initialAuthState ={
+    isAuthenticated :false
+}
+
+const authSlice=createSlice({
+    name :"authentication",
+    initialState :initialAuthState,
+    reducers:{
+        login (state){
+            state.isAuthenticated=true
+        },
+        logout(state){
+            state.isAuthenticated=false
+        }
+    }
+})
+
+
+const store =configureStore({reducer: {counter:counterSlice.reducer,auth :authSlice.reducer}
+})
+
+
+export const counterActions =counterSlice.actions
+export const authActions =authSlice.actions
+export default store
